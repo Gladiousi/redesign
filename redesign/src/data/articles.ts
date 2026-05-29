@@ -12,13 +12,13 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "bezopasnost-detskoj",
-    title: "Как выбрать безопасный комплекс для ребёнка",
+    title: "Статья Н. Андрияновой - интервью с Олегом Скрипалевым",
     excerpt:
-      "На что смотреть при покупке: материалы, крепления, высота и покрытие.",
+      "Как правильно организовать дома спортивно-игровую зону для ребенка",
     date: "12 марта 2026",
     readTime: "6 мин",
     image:
-      "https://images.unsplash.com/photo-1503454537845-7e8b5b2374ea?w=1200&q=80",
+      "Oleg.jpg",
     author: "Школа Скрипалевых",
     content: [
       {

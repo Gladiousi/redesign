@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils"
 const collections = [
   {
     id: "outdoor",
-    title: "Уличные комплексы",
+    title: "Комплексы не только для дома!",
     description:
-      "Погодостойкие конструкции для дачи и частного двора. Усиленная пропитка и глубокая установка.",
+      "Погодостойкие конструкции для дачи и частного двора.",
     image:
-      "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=1000&q=80",
+      "cotage.jpg",
     href: "/catalog?category=outdoor",
   },
   {
@@ -22,7 +22,7 @@ const collections = [
     description:
       "Компактные решения для детской и гостиной. Бесшумное крепление, бережное отношение к отделке.",
     image:
-      "https://images.unsplash.com/photo-1503454537845-7e8b5b2374ea?w=1000&q=80",
+      "/home.jpg",
     href: "/catalog?category=home",
   },
 ]

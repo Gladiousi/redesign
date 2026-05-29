@@ -10,7 +10,7 @@ export function AboutPage() {
           <SectionHeading
             eyebrow="О компании"
             title="Семейное производство с душой"
-            description="ИП Скрепалев Олег Владимирович — мастерская детских спортивных комплексов из натуральной древесины."
+            description="ИП Скрепалев Олег Владимирович - мастерская детских спортивных комплексов из натуральной древесины для здоровья детей."
           />
         </div>
       </section>
@@ -19,7 +19,7 @@ export function AboutPage() {
         <div className="grid gap-5 lg:grid-cols-12">
           <BentoCard className="lg:col-span-7" variant="image">
             <img
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&q=80"
+              src="/about.jpg"
               alt="Мастерская"
               className="aspect-[16/10] w-full object-cover"
             />
@@ -39,7 +39,7 @@ export function AboutPage() {
             </p>
           </BentoCard>
           <BentoCard className="lg:col-span-4" variant="accent">
-            <p className="text-4xl font-bold text-ink-dark">500+</p>
+            <p className="text-4xl font-bold text-ink-dark">100+</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Установленных комплексов
             </p>
@@ -47,7 +47,7 @@ export function AboutPage() {
           <BentoCard className="lg:col-span-4" variant="forest">
             <p className="text-lg font-semibold text-white">Методика</p>
             <p className="mt-2 text-sm text-white/85">
-              Подбор снарядов по возрасту, консультация педагога и инструкция по
+              Подбор снарядов по возрасту, консультация и инструкция по
               безопасной эксплуатации в комплекте.
             </p>
           </BentoCard>
