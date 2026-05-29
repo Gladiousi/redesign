@@ -63,7 +63,7 @@ export function Footer() {
               <span>г. Реутов, ул. Молодежная, 1</span>
             </li>
             <li>
-              <a href="tel:+74842700000" className={`flex gap-2 ${footerLinkClass}`}>
+              <a href="tel:+79165348358" className={`flex gap-2 ${footerLinkClass}`}>
                 <Phone className="size-4 shrink-0 text-forest" />
                 +7 (916) 534-83-58
               </a>
@@ -84,7 +84,7 @@ export function Footer() {
       <div className="border-t border-border/80">
         <div className="section-inner flex flex-col gap-2 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} ИП Скрепалев О.В. Все права защищены.</p>
-          <p>Редизайн - дипломный проект. Прототип интерфейса.</p>
+          <p>Редизайн - дипломный проект Юрин2026. Прототип интерфейса.</p>
         </div>
       </div>
     </footer>
