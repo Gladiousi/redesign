@@ -5,8 +5,8 @@ import { CtaSection } from "@/components/sections/CtaSection"
 export function AboutPage() {
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="О компании"
             title="Семейное производство с душой"
@@ -15,7 +15,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 md:px-6 md:pb-24 lg:px-8">
+      <section className="section-inner section-block">
         <div className="grid gap-5 lg:grid-cols-12">
           <BentoCard className="lg:col-span-7" variant="image">
             <img

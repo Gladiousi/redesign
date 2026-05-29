@@ -54,65 +54,67 @@ export function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-cream">
-        <div className="section-inner grid gap-10 py-12 md:grid-cols-12 md:items-center md:gap-8 md:py-20 lg:py-28">
-          <div className="animate-fade-up md:col-span-5">
-            <p className="text-sm font-medium tracking-wide text-forest uppercase">
-              ИП Скрепалев · Калуга
-            </p>
-            <h1 className="mt-4 text-4xl font-bold leading-[1.1] text-ink-dark md:text-5xl lg:text-[3.25rem]">
-              Детские спортивные комплексы из{" "}
-              <span className="text-forest">натурального дерева</span>
-            </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-              Тёплый, надёжный дизайн для семьи: безопасные конструкции,
-              экологичные материалы и индивидуальный подбор под ваше
-              пространство.
-            </p>
-            <ButtonGroup className="mt-8 max-w-none sm:max-w-md">
-              <ButtonGroupItem>
-                <Link to="/catalog" className="block w-full">
-                  <Button size="lg" className="w-full">
-                    Смотреть каталог
-                  </Button>
-                </Link>
-              </ButtonGroupItem>
-              <ButtonGroupItem>
-                <Link to="/about" className="block w-full">
-                  <Button size="lg" variant="outline" className="w-full">
-                    О производстве
-                  </Button>
-                </Link>
-              </ButtonGroupItem>
-            </ButtonGroup>
-          </div>
-          <div className="animate-fade-up-delay md:col-span-7">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[16/11]">
-              <img
-                src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1400&q=85"
-                alt="Детский спортивный комплекс из дерева"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute right-4 bottom-4 left-4 rounded-2xl bg-white/95 p-4 backdrop-blur-sm md:right-auto md:bottom-6 md:left-6 md:max-w-xs md:p-5">
-                <p className="text-sm font-semibold text-ink-dark">
-                  Комплекс «Скрипалёвъ»
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Флагманская модель · от 89 000 ₽
-                </p>
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
+          <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-12 lg:gap-14">
+            <div className="animate-fade-up md:col-span-5">
+              <p className="text-sm font-medium tracking-wide text-forest uppercase">
+                ИП Скрепалев · Калуга
+              </p>
+              <h1 className="mt-4 text-4xl font-bold leading-[1.1] text-ink-dark md:text-5xl lg:text-[3.25rem]">
+                Детские спортивные комплексы из{" "}
+                <span className="text-forest">натурального дерева</span>
+              </h1>
+              <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+                Тёплый, надёжный дизайн для семьи: безопасные конструкции,
+                экологичные материалы и индивидуальный подбор под ваше
+                пространство.
+              </p>
+              <ButtonGroup className="max-w-none">
+                <ButtonGroupItem>
+                  <Link to="/catalog" className="block w-full">
+                    <Button size="lg" className="w-full">
+                      Смотреть каталог
+                    </Button>
+                  </Link>
+                </ButtonGroupItem>
+                <ButtonGroupItem>
+                  <Link to="/about" className="block w-full">
+                    <Button size="lg" variant="outline" className="w-full">
+                      О производстве
+                    </Button>
+                  </Link>
+                </ButtonGroupItem>
+              </ButtonGroup>
+            </div>
+            <div className="animate-fade-up-delay md:col-span-7">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[16/11]">
+                <img
+                  src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1400&q=85"
+                  alt="Детский спортивный комплекс из дерева"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute right-4 bottom-4 left-4 rounded-2xl bg-white/95 p-4 backdrop-blur-sm md:right-auto md:bottom-6 md:left-6 md:max-w-xs md:p-5">
+                  <p className="text-sm font-semibold text-ink-dark">
+                    Комплекс «Скрипалёвъ»
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Флагманская модель · от 89 000 ₽
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-inner section-body !pt-0">
+      <section className="section-inner section-block">
         <SectionHeading
           eyebrow="Преимущества"
           title="Почему родители выбирают нас"
           description="Коротко о главном — без лишних слов. Каждый блок отвечает на конкретный вопрос."
         />
-        <div className="bento-grid mt-10 lg:grid-rows-2">
+        <div className="bento-grid section-content lg:grid-rows-2">
           {advantages.map((item, i) => {
             const Icon = item.icon
             const spans =
@@ -150,9 +152,9 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-cream/60 py-16 md:py-24">
-        <div className="section-inner">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
+      <section className="bg-cream/60">
+        <div className="section-inner section-block">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               eyebrow="Каталог"
               title="Наши комплексы"
@@ -164,7 +166,7 @@ export function HomePage() {
               </Button>
             </Link>
           </div>
-          <div className="bento-grid mt-10 lg:grid-rows-2">
+          <div className="bento-grid section-content lg:grid-rows-2">
             <div className="lg:col-span-7 lg:row-span-2">
               <ProductCard
                 product={featured[0]}
@@ -185,14 +187,14 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-inner section-body !pt-0">
+      <section className="section-inner section-block">
         <SectionHeading
           eyebrow="Отзывы"
           title="Семьи, которые уже занимаются"
           align="center"
           className="mx-auto"
         />
-        <div className="bento-grid mt-10">
+        <div className="bento-grid section-content">
           {reviews.slice(0, 3).map((review, i) => (
             <BentoCard
               key={review.id}
@@ -224,8 +226,8 @@ export function HomePage() {
             </BentoCard>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <Link to="/reviews" className="w-full max-w-xs sm:w-auto">
+        <div className="section-after-actions flex justify-center">
+          <Link to="/reviews" className="w-full max-w-sm sm:w-auto">
             <Button variant="outline" className="w-full sm:w-auto">
               Все отзывы
             </Button>

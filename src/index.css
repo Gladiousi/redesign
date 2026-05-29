@@ -27,6 +27,11 @@
   --color-ring: var(--color-forest);
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
+
+  --spacing-section-y: 4rem;
+  --spacing-section-y-md: 5rem;
+  --spacing-block: 2.5rem;
+  --spacing-block-md: 3rem;
 }
 
 @layer base {
@@ -64,15 +69,19 @@
   }
 
   .section-hero {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply pt-12 pb-14 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24;
   }
 
-  .section-body {
-    @apply pb-16 pt-2 md:pb-20 lg:pb-24;
+  .section-block {
+    @apply py-14 md:py-20 lg:py-24;
   }
 
-  .section-body-sm {
-    @apply pb-12 pt-2 md:pb-16;
+  .section-content {
+    @apply mt-10 md:mt-12;
+  }
+
+  .section-after-actions {
+    @apply mt-10 md:mt-12;
   }
 
   .bento-grid {

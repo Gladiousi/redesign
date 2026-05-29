@@ -16,8 +16,8 @@ export function ArticlePage() {
   return (
     <>
       <article>
-        <header className="section-hero bg-cream">
-          <div className="section-inner max-w-3xl">
+        <header className="bg-cream">
+          <div className="section-inner section-hero max-w-3xl">
             <TextLink
               to="/articles"
               className="inline-flex items-center gap-2 no-underline hover:underline"
@@ -41,7 +41,7 @@ export function ArticlePage() {
           </div>
         </header>
 
-        <div className="section-inner max-w-3xl section-body-sm">
+        <div className="section-inner max-w-3xl section-block">
           <div className="overflow-hidden rounded-3xl">
             <img
               src={article.image}
@@ -50,12 +50,12 @@ export function ArticlePage() {
             />
           </div>
 
-          <div className="prose-site mt-10 space-y-6">
+          <div className="section-content space-y-6">
             {article.content.map((block, i) =>
               block.type === "h2" ? (
                 <h2
                   key={i}
-                  className="pt-4 text-xl font-semibold text-ink-dark md:text-2xl"
+                  className="pt-2 text-xl font-semibold text-ink-dark md:text-2xl"
                 >
                   {block.text}
                 </h2>
@@ -72,9 +72,9 @@ export function ArticlePage() {
         </div>
       </article>
 
-      <section className="section-inner section-body border-t border-border">
+      <section className="section-inner section-block border-t border-border">
         <h2 className="text-xl font-semibold text-ink-dark">Читайте также</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="section-content grid gap-5 sm:grid-cols-2">
           {more.map((a) => (
             <BentoCard key={a.slug} as="article">
               <time className="text-xs text-muted-foreground">{a.date}</time>

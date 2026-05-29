@@ -14,8 +14,8 @@ export function ContactsPage() {
 
   return (
     <>
-      <section className="section-hero bg-cream">
-        <div className="section-inner">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Контакты"
             title="Свяжитесь с нами"
@@ -24,7 +24,7 @@ export function ContactsPage() {
         </div>
       </section>
 
-      <section className="section-inner section-body">
+      <section className="section-inner section-block">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
             <BentoCard>
@@ -112,9 +112,11 @@ export function ContactsPage() {
                     placeholder="Какой комплекс интересует, адрес для замера..."
                   />
                 </label>
-                <Button type="submit" size="lg">
-                  Отправить заявку
-                </Button>
+                <div className="pt-2">
+                  <Button type="submit" size="lg" className="w-full sm:w-auto">
+                    Отправить заявку
+                  </Button>
+                </div>
               </form>
             )}
           </BentoCard>

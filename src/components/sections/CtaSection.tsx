@@ -12,7 +12,7 @@ export function CtaSection({
   description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Калужской области и с доставкой по России.",
 }: CtaSectionProps) {
   return (
-    <section className="section-inner py-14 md:py-20 lg:py-24">
+    <section className="section-inner section-block">
       <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-10 md:px-12 md:py-14">
         <div
           className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-white/10 blur-3xl"
@@ -27,7 +27,7 @@ export function CtaSection({
           <p className="mt-4 text-base leading-relaxed text-white/90 md:text-lg">
             {description}
           </p>
-          <ButtonGroup className="mt-8 max-w-none sm:max-w-md">
+          <ButtonGroup className="max-w-none sm:max-w-md">
             <ButtonGroupItem>
               <Link to="/contacts" className="block w-full">
                 <Button variant="secondary" size="lg" className="w-full">

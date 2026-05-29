@@ -23,8 +23,8 @@ const programs = [
 export function SchoolPage() {
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Школа Скрипалевых"
             title="Учимся двигаться правильно"
@@ -33,8 +33,8 @@ export function SchoolPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 md:px-6 md:pb-24 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
+      <section className="section-inner section-block">
+        <div className="grid gap-5 md:grid-cols-3">
           {programs.map((p) => (
             <BentoCard key={p.title}>
               <p className="text-xs font-medium text-forest uppercase">{p.age}</p>
@@ -45,7 +45,7 @@ export function SchoolPage() {
             </BentoCard>
           ))}
         </div>
-        <BentoCard className="mt-5" variant="forest">
+        <BentoCard className="section-content" variant="forest">
           <p className="max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
             При покупке комплекса вы получаете памятку по безопасности и доступ к
             базе упражнений. Очные занятия — по записи в Калуге.

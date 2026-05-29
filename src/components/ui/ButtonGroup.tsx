@@ -4,14 +4,21 @@ import type { ReactNode } from "react"
 type ButtonGroupProps = {
   children: ReactNode
   className?: string
+  /** Отступ сверху от текста (по умолчанию mt-8) */
+  spacing?: "default" | "none"
 }
 
 /** Группа кнопок: на мобилке — колонка на всю ширину, с sm — в ряд */
-export function ButtonGroup({ children, className }: ButtonGroupProps) {
+export function ButtonGroup({
+  children,
+  className,
+  spacing = "default",
+}: ButtonGroupProps) {
   return (
     <div
       className={cn(
         "flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap",
+        spacing === "default" && "mt-8",
         className
       )}
     >

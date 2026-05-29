@@ -12,8 +12,8 @@ export function CartPage() {
 
   return (
     <>
-      <section className="section-hero bg-cream">
-        <div className="section-inner">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Заказ"
             title="Корзина"
@@ -26,7 +26,7 @@ export function CartPage() {
         </div>
       </section>
 
-      <section className="section-inner section-body">
+      <section className="section-inner section-block">
         {lines.length === 0 ? (
           <div className="flex flex-col items-center rounded-3xl bg-cream px-6 py-16 text-center">
             <ShoppingBag className="size-12 text-forest" strokeWidth={1.5} />
@@ -34,7 +34,7 @@ export function CartPage() {
             <p className="mt-2 max-w-sm text-sm text-muted-foreground">
               Перейдите в каталог и нажмите «В корзину» на карточке товара.
             </p>
-            <div className="mt-8 w-full max-w-xs">
+            <div className="section-after-actions w-full max-w-xs">
               <Link to="/catalog" className="block w-full">
                 <Button size="lg" className="w-full">
                   В каталог
@@ -117,7 +117,7 @@ export function CartPage() {
                 {formatPrice(subtotal)}
               </p>
               <div className="mt-8">
-                <ButtonGroup className="max-w-none">
+                <ButtonGroup spacing="none" className="max-w-none">
                   <ButtonGroupItem>
                     <Link to="/contacts" className="block w-full">
                       <Button size="lg" className="w-full">

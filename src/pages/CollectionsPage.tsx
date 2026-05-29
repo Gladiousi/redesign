@@ -33,8 +33,8 @@ export function CollectionsPage() {
 
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Коллекции"
             title="Готовые решения"
@@ -43,53 +43,55 @@ export function CollectionsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl space-y-8 px-4 pb-16 md:px-6 md:pb-24 lg:px-8">
-        {collections.map((col, i) => {
-          const items = products.filter((p) => p.category === col.id)
-          const isHighlight = highlight === col.id
-          return (
-            <BentoCard
-              key={col.id}
-              variant="image"
-              className={cn(
-                "grid overflow-hidden md:grid-cols-2",
-                isHighlight && "ring-2 ring-forest ring-offset-4"
-              )}
-            >
-              <div
+      <section className="section-inner section-block">
+        <div className="flex flex-col gap-8">
+          {collections.map((col, i) => {
+            const items = products.filter((p) => p.category === col.id)
+            const isHighlight = highlight === col.id
+            return (
+              <BentoCard
+                key={col.id}
+                variant="image"
                 className={cn(
-                  "relative min-h-[240px]",
-                  i === 1 && "md:order-2"
+                  "grid overflow-hidden md:grid-cols-2",
+                  isHighlight && "ring-2 ring-forest ring-offset-4"
                 )}
               >
-                <img
-                  src={col.image}
-                  alt={col.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-              <div
-                className={cn(
-                  "flex flex-col justify-center p-8 md:p-10",
-                  i === 1 && "md:order-1"
-                )}
-              >
-                <h2 className="text-2xl font-semibold text-ink-dark md:text-3xl">
-                  {col.title}
-                </h2>
-                <p className="mt-4 text-muted-foreground">{col.description}</p>
-                <p className="mt-4 text-sm text-ink">
-                  {items.length} модел{items.length === 1 ? "ь" : "и"} в подборке
-                </p>
-                <div className="mt-6">
-                  <Link to={col.href}>
-                    <Button>Смотреть модели</Button>
-                  </Link>
+                <div
+                  className={cn(
+                    "relative min-h-[240px]",
+                    i === 1 && "md:order-2"
+                  )}
+                >
+                  <img
+                    src={col.image}
+                    alt={col.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
-              </div>
-            </BentoCard>
-          )
-        })}
+                <div
+                  className={cn(
+                    "flex flex-col justify-center p-8 md:p-10",
+                    i === 1 && "md:order-1"
+                  )}
+                >
+                  <h2 className="text-2xl font-semibold text-ink-dark md:text-3xl">
+                    {col.title}
+                  </h2>
+                  <p className="mt-4 text-muted-foreground">{col.description}</p>
+                  <p className="mt-4 text-sm text-ink">
+                    {items.length} модел{items.length === 1 ? "ь" : "и"} в подборке
+                  </p>
+                  <div className="mt-8">
+                    <Link to={col.href} className="block w-full sm:inline-block sm:w-auto">
+                      <Button className="w-full sm:w-auto">Смотреть модели</Button>
+                    </Link>
+                  </div>
+                </div>
+              </BentoCard>
+            )
+          })}
+        </div>
       </section>
 
       <CtaSection />

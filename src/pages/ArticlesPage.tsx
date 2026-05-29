@@ -10,8 +10,8 @@ export function ArticlesPage() {
 
   return (
     <>
-      <section className="section-hero bg-cream">
-        <div className="section-inner">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Блог"
             title="Статьи и советы"
@@ -20,7 +20,7 @@ export function ArticlesPage() {
         </div>
       </section>
 
-      <section className="section-inner section-body">
+      <section className="section-inner section-block">
         <Link
           to={`/articles/${featured.slug}`}
           className="group block overflow-hidden rounded-3xl bg-cream transition-shadow hover:shadow-md"
@@ -49,7 +49,7 @@ export function ArticlesPage() {
           </div>
         </Link>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:mt-10">
+        <div className="section-content grid gap-5 sm:grid-cols-2">
           {rest.map((article) => (
             <BentoCard key={article.slug} as="article" className="flex flex-col">
               <div className="overflow-hidden rounded-2xl">

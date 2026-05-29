@@ -31,8 +31,8 @@ export function CatalogPage() {
 
   return (
     <>
-      <section className="section-hero bg-cream">
-        <div className="section-inner">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Каталог"
             title="Спортивные комплексы"
@@ -41,7 +41,7 @@ export function CatalogPage() {
         </div>
       </section>
 
-      <section className="section-inner section-body">
+      <section className="section-inner section-block">
         <div className="flex flex-wrap gap-2.5">
           {filters.map((f) => (
             <button
@@ -60,7 +60,7 @@ export function CatalogPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="section-content grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

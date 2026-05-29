@@ -14,8 +14,8 @@ const elements = products.filter(
 export function ElementsPage() {
   return (
     <>
-      <section className="section-hero bg-cream">
-        <div className="section-inner">
+      <section className="bg-cream">
+        <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Модули"
             title="Отдельные элементы"
@@ -23,13 +23,13 @@ export function ElementsPage() {
           />
         </div>
       </section>
-      <section className="section-inner section-body">
+      <section className="section-inner section-block">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {elements.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
-        <p className="mt-12 text-center text-sm text-muted-foreground">
+        <p className="section-after-actions text-center text-sm text-muted-foreground">
           Нужна индивидуальная конфигурация?{" "}
           <TextLink to="/contacts">Свяжитесь с нами</TextLink>
         </p>

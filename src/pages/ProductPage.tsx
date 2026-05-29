@@ -19,7 +19,7 @@ export function ProductPage() {
 
   return (
     <>
-      <section className="section-inner py-8 md:py-12">
+      <section className="section-inner section-hero">
         <TextLink
           to="/catalog"
           className="inline-flex items-center gap-2 no-underline hover:underline"
@@ -28,7 +28,7 @@ export function ProductPage() {
           Назад в каталог
         </TextLink>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="section-content grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-3xl bg-cream">
               <img
@@ -81,7 +81,7 @@ export function ProductPage() {
               ))}
             </ul>
 
-            <ButtonGroup className="mt-10 max-w-none">
+            <ButtonGroup className="max-w-none">
               <ButtonGroupItem>
                 <AddToCartButton productId={product.id} className="w-full" />
               </ButtonGroupItem>
@@ -104,12 +104,12 @@ export function ProductPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-cream/40 py-14 md:py-16">
-        <div className="section-inner">
+      <section className="border-t border-border bg-cream/40">
+        <div className="section-inner section-block">
           <h2 className="text-2xl font-semibold text-ink-dark">
             Похожие модели
           </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="section-content grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
