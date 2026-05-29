@@ -19,7 +19,7 @@ export function ContactsPage() {
           <SectionHeading
             eyebrow="Контакты"
             title="Свяжитесь с нами"
-            description="Оставьте заявку на замер или позвоните — ответим в рабочее время."
+            description="Оставьте заявку на замер или позвоните - ответим в рабочее время."
           />
         </div>
       </section>
@@ -44,7 +44,7 @@ export function ContactsPage() {
                 href="mailto:oleg-skripaĺ@yandex.ru"
                 className="mt-1 block font-semibold text-link hover:text-link-hover hover:underline"
               >
-                oleg-skripaĺ@yandex.ru
+                oleg-skripal@yandex.ru
               </a>
             </BentoCard>
             <BentoCard>
