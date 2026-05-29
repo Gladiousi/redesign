@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { Layout } from "@/components/layout/Layout"
 import { AboutPage } from "@/pages/AboutPage"
+import { ArticlePage } from "@/pages/ArticlePage"
 import { ArticlesPage } from "@/pages/ArticlesPage"
+import { CartPage } from "@/pages/CartPage"
 import { CatalogPage } from "@/pages/CatalogPage"
 import { CollectionsPage } from "@/pages/CollectionsPage"
 import { ContactsPage } from "@/pages/ContactsPage"
@@ -24,8 +26,10 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "school", element: <SchoolPage /> },
       { path: "articles", element: <ArticlesPage /> },
+      { path: "articles/:slug", element: <ArticlePage /> },
       { path: "reviews", element: <ReviewsPage /> },
       { path: "contacts", element: <ContactsPage /> },
+      { path: "cart", element: <CartPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

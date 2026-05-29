@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
 
 type CtaSectionProps = {
   title?: string
@@ -11,10 +12,10 @@ export function CtaSection({
   description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Калужской области и с доставкой по России.",
 }: CtaSectionProps) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24 lg:px-8">
-      <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-12 md:px-12 md:py-16">
+    <section className="section-inner py-14 md:py-20 lg:py-24">
+      <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-10 md:px-12 md:py-14">
         <div
-          className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-white/10 blur-3xl"
+          className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-white/10 blur-3xl"
           aria-hidden
         />
         <div
@@ -23,25 +24,29 @@ export function CtaSection({
         />
         <div className="relative max-w-xl">
           <h2 className="text-2xl font-semibold text-white md:text-3xl">{title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-white/85 md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-white/90 md:text-lg">
             {description}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contacts">
-              <Button variant="secondary" size="lg">
-                Оставить заявку
-              </Button>
-            </Link>
-            <a href="tel:+74842700000">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              >
-                Позвонить
-              </Button>
-            </a>
-          </div>
+          <ButtonGroup className="mt-8 max-w-none sm:max-w-md">
+            <ButtonGroupItem>
+              <Link to="/contacts" className="block w-full">
+                <Button variant="secondary" size="lg" className="w-full">
+                  Оставить заявку
+                </Button>
+              </Link>
+            </ButtonGroupItem>
+            <ButtonGroupItem>
+              <a href="tel:+74842700000" className="block w-full">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full border-white/40 bg-transparent text-white hover:bg-white/15 hover:text-white"
+                >
+                  Позвонить
+                </Button>
+              </a>
+            </ButtonGroupItem>
+          </ButtonGroup>
         </div>
       </div>
     </section>

@@ -2,11 +2,14 @@ import { Link } from "react-router-dom"
 import { footerNav } from "@/data/navigation"
 import { Mail, MapPin, Phone } from "lucide-react"
 
+const footerLinkClass =
+  "text-sm text-muted-foreground transition-colors hover:text-link hover:underline hover:underline-offset-2"
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-cream">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 md:grid-cols-2 md:px-6 lg:grid-cols-4 lg:px-8 lg:py-16">
-        <div className="lg:col-span-1">
+      <div className="section-inner grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-14 lg:grid-cols-4 lg:py-16">
+        <div>
           <Link to="/" className="text-xl font-bold text-ink-dark">
             Скрипалёвъ
           </Link>
@@ -18,33 +21,37 @@ export function Footer() {
 
         <div>
           <h3 className="text-sm font-semibold text-ink-dark">Каталог</h3>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2.5">
             {footerNav.catalog.map((item) => (
               <li key={item.href}>
-                <Link
-                  to={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-forest"
-                >
+                <Link to={item.href} className={footerLinkClass}>
                   {item.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/cart" className={footerLinkClass}>
+                Корзина
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-sm font-semibold text-ink-dark">Компания</h3>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2.5">
             {footerNav.company.map((item) => (
               <li key={item.href}>
-                <Link
-                  to={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-forest"
-                >
+                <Link to={item.href} className={footerLinkClass}>
                   {item.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/articles" className={footerLinkClass}>
+                Статьи
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -56,10 +63,7 @@ export function Footer() {
               <span>г. Калуга, ул. Примерная, 12</span>
             </li>
             <li>
-              <a
-                href="tel:+74842700000"
-                className="flex gap-2 transition-colors hover:text-forest"
-              >
+              <a href="tel:+74842700000" className={`flex gap-2 ${footerLinkClass}`}>
                 <Phone className="size-4 shrink-0 text-forest" />
                 +7 (4842) 70-00-00
               </a>
@@ -67,7 +71,7 @@ export function Footer() {
             <li>
               <a
                 href="mailto:info@skripalev.ru"
-                className="flex gap-2 transition-colors hover:text-forest"
+                className={`flex gap-2 ${footerLinkClass}`}
               >
                 <Mail className="size-4 shrink-0 text-forest" />
                 info@skripalev.ru
@@ -78,7 +82,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border/80">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+        <div className="section-inner flex flex-col gap-2 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} ИП Скрепалев О.В. Все права защищены.</p>
           <p>Редизайн — дипломный проект. Прототип интерфейса.</p>
         </div>

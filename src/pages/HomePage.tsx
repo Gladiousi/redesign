@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 import { BentoCard } from "@/components/ui/BentoCard"
 import { Button } from "@/components/ui/button"
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
 import { ProductCard } from "@/components/ui/ProductCard"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { CtaSection } from "@/components/sections/CtaSection"
@@ -54,8 +55,8 @@ export function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-cream">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-12 md:items-center md:gap-6 md:py-20 md:px-6 lg:px-8 lg:py-28">
-          <div className="animate-fade-up md:col-span-5 lg:col-span-5">
+        <div className="section-inner grid gap-10 py-12 md:grid-cols-12 md:items-center md:gap-8 md:py-20 lg:py-28">
+          <div className="animate-fade-up md:col-span-5">
             <p className="text-sm font-medium tracking-wide text-forest uppercase">
               ИП Скрепалев · Калуга
             </p>
@@ -68,25 +69,31 @@ export function HomePage() {
               экологичные материалы и индивидуальный подбор под ваше
               пространство.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/catalog">
-                <Button size="lg">Смотреть каталог</Button>
-              </Link>
-              <Link to="/about">
-                <Button size="lg" variant="outline">
-                  О производстве
-                </Button>
-              </Link>
-            </div>
+            <ButtonGroup className="mt-8 max-w-none sm:max-w-md">
+              <ButtonGroupItem>
+                <Link to="/catalog" className="block w-full">
+                  <Button size="lg" className="w-full">
+                    Смотреть каталог
+                  </Button>
+                </Link>
+              </ButtonGroupItem>
+              <ButtonGroupItem>
+                <Link to="/about" className="block w-full">
+                  <Button size="lg" variant="outline" className="w-full">
+                    О производстве
+                  </Button>
+                </Link>
+              </ButtonGroupItem>
+            </ButtonGroup>
           </div>
-          <div className="animate-fade-up-delay md:col-span-7 lg:col-span-7">
+          <div className="animate-fade-up-delay md:col-span-7">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[16/11]">
               <img
                 src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1400&q=85"
                 alt="Детский спортивный комплекс из дерева"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 p-4 backdrop-blur-sm md:bottom-6 md:left-6 md:max-w-xs md:p-5">
+              <div className="absolute right-4 bottom-4 left-4 rounded-2xl bg-white/95 p-4 backdrop-blur-sm md:right-auto md:bottom-6 md:left-6 md:max-w-xs md:p-5">
                 <p className="text-sm font-semibold text-ink-dark">
                   Комплекс «Скрипалёвъ»
                 </p>
@@ -99,31 +106,27 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24 lg:px-8">
+      <section className="section-inner section-body !pt-0">
         <SectionHeading
           eyebrow="Преимущества"
           title="Почему родители выбирают нас"
           description="Коротко о главном — без лишних слов. Каждый блок отвечает на конкретный вопрос."
         />
-        <div className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
+        <div className="bento-grid mt-10 lg:grid-rows-2">
           {advantages.map((item, i) => {
             const Icon = item.icon
             const spans =
               i === 0
-                ? "lg:col-span-4 lg:row-span-2"
-                : i === 1
+                ? "sm:col-span-2 lg:col-span-4 lg:row-span-2"
+                : i === 1 || i === 2
                   ? "lg:col-span-4"
-                  : i === 2
-                    ? "lg:col-span-4"
-                    : i === 3
-                      ? "lg:col-span-3"
-                      : i === 4
-                        ? "lg:col-span-3"
-                        : "lg:col-span-6"
+                  : i === 3 || i === 4
+                    ? "lg:col-span-3"
+                    : "sm:col-span-2 lg:col-span-6"
             return (
               <BentoCard
                 key={item.title}
-                className={`flex flex-col justify-between ${spans} ${i === 0 ? "min-h-[220px] lg:min-h-[280px]" : ""}`}
+                className={`flex flex-col justify-between ${spans} ${i === 0 ? "min-h-[200px] lg:min-h-[260px]" : ""}`}
                 variant={i === 0 ? "forest" : i === 5 ? "accent" : "default"}
               >
                 <Icon
@@ -147,51 +150,55 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-cream/50 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <section className="bg-cream/60 py-16 md:py-24">
+        <div className="section-inner">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
             <SectionHeading
               eyebrow="Каталог"
               title="Наши комплексы"
               description="Готовые решения и модули — от компактной стенки до уличного комплекса."
             />
-            <Link to="/catalog" className="shrink-0">
-              <Button variant="outline">Весь каталог</Button>
+            <Link to="/catalog" className="w-full shrink-0 md:w-auto">
+              <Button variant="outline" className="w-full md:w-auto">
+                Весь каталог
+              </Button>
             </Link>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
-            <div className="sm:col-span-2 lg:col-span-7">
+          <div className="bento-grid mt-10 lg:grid-rows-2">
+            <div className="lg:col-span-7 lg:row-span-2">
               <ProductCard
                 product={featured[0]}
                 variant="featured"
-                className="h-full"
+                className="h-full min-h-[280px]"
               />
             </div>
-            <div className="grid gap-4 sm:col-span-2 lg:col-span-5 lg:grid-rows-2">
+            <div className="lg:col-span-5">
               <ProductCard product={featured[1]} className="h-full" />
+            </div>
+            <div className="lg:col-span-5">
               <ProductCard product={featured[2]} className="h-full" />
             </div>
-            <div className="sm:col-span-1 lg:col-span-6">
+            <div className="lg:col-span-12">
               <ProductCard product={featured[3]} className="h-full" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24 lg:px-8">
+      <section className="section-inner section-body !pt-0">
         <SectionHeading
           eyebrow="Отзывы"
           title="Семьи, которые уже занимаются"
           align="center"
           className="mx-auto"
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-12 lg:gap-5">
+        <div className="bento-grid mt-10">
           {reviews.slice(0, 3).map((review, i) => (
             <BentoCard
               key={review.id}
               className={
                 i === 0
-                  ? "lg:col-span-5"
+                  ? "md:col-span-2 lg:col-span-5"
                   : i === 1
                     ? "lg:col-span-4"
                     : "lg:col-span-3"
@@ -209,7 +216,7 @@ export function HomePage() {
               </p>
               <div className="mt-6 border-t border-border/80 pt-4">
                 <p className="font-medium text-ink-dark">{review.author}</p>
-                <p className="text-xs text-muted-foreground">
+                <p className="mt-1 text-xs text-muted-foreground">
                   {review.city}
                   {review.product && ` · ${review.product}`}
                 </p>
@@ -217,9 +224,11 @@ export function HomePage() {
             </BentoCard>
           ))}
         </div>
-        <div className="mt-8 text-center">
-          <Link to="/reviews">
-            <Button variant="outline">Все отзывы</Button>
+        <div className="mt-10 flex justify-center">
+          <Link to="/reviews" className="w-full max-w-xs sm:w-auto">
+            <Button variant="outline" className="w-full sm:w-auto">
+              Все отзывы
+            </Button>
           </Link>
         </div>
       </section>

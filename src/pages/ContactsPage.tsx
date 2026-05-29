@@ -14,8 +14,8 @@ export function ContactsPage() {
 
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
+      <section className="section-hero bg-cream">
+        <div className="section-inner">
           <SectionHeading
             eyebrow="Контакты"
             title="Свяжитесь с нами"
@@ -24,7 +24,7 @@ export function ContactsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 md:px-6 lg:px-8">
+      <section className="section-inner section-body">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
             <BentoCard>
@@ -32,7 +32,7 @@ export function ContactsPage() {
               <p className="mt-3 font-medium text-ink-dark">Телефон</p>
               <a
                 href="tel:+74842700000"
-                className="mt-1 block text-forest hover:underline"
+                className="mt-1 block font-semibold text-link hover:text-link-hover hover:underline"
               >
                 +7 (4842) 70-00-00
               </a>
@@ -42,7 +42,7 @@ export function ContactsPage() {
               <p className="mt-3 font-medium text-ink-dark">Email</p>
               <a
                 href="mailto:info@skripalev.ru"
-                className="mt-1 block text-forest hover:underline"
+                className="mt-1 block font-semibold text-link hover:text-link-hover hover:underline"
               >
                 info@skripalev.ru
               </a>

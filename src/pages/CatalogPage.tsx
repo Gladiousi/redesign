@@ -31,8 +31,8 @@ export function CatalogPage() {
 
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:px-6 md:py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="section-hero bg-cream">
+        <div className="section-inner">
           <SectionHeading
             eyebrow="Каталог"
             title="Спортивные комплексы"
@@ -41,8 +41,8 @@ export function CatalogPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 md:px-6 md:pb-24 lg:px-8">
-        <div className="flex flex-wrap gap-2">
+      <section className="section-inner section-body">
+        <div className="flex flex-wrap gap-2.5">
           {filters.map((f) => (
             <button
               key={f.id}
@@ -60,7 +60,7 @@ export function CatalogPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

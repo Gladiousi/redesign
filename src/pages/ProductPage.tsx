@@ -1,7 +1,10 @@
 import { Link, useParams } from "react-router-dom"
 import { ArrowLeft, Check } from "lucide-react"
+import { AddToCartButton } from "@/components/cart/AddToCartButton"
 import { Button } from "@/components/ui/button"
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
 import { ProductCard } from "@/components/ui/ProductCard"
+import { TextLink } from "@/components/ui/TextLink"
 import { CtaSection } from "@/components/sections/CtaSection"
 import { getProductBySlug, formatPrice, products } from "@/data/products"
 import { NotFoundPage } from "./NotFoundPage"
@@ -16,14 +19,14 @@ export function ProductPage() {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8">
-        <Link
+      <section className="section-inner py-8 md:py-12">
+        <TextLink
           to="/catalog"
-          className="inline-flex items-center gap-2 text-sm font-medium text-forest hover:underline"
+          className="inline-flex items-center gap-2 no-underline hover:underline"
         >
           <ArrowLeft className="size-4" />
           Назад в каталог
-        </Link>
+        </TextLink>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
@@ -49,13 +52,13 @@ export function ProductPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <p className="text-sm font-medium text-forest uppercase">
+            <p className="text-sm font-semibold text-forest uppercase">
               {product.material}
             </p>
             <h1 className="mt-2 text-3xl font-bold text-ink-dark md:text-4xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-2xl font-semibold text-forest">
+            <p className="mt-4 text-2xl font-semibold text-link">
               от {formatPrice(product.priceFrom)}
             </p>
             <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -78,26 +81,35 @@ export function ProductPage() {
               ))}
             </ul>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link to="/contacts">
-                <Button size="lg">Заказать расчёт</Button>
-              </Link>
-              <a href="tel:+74842700000">
-                <Button size="lg" variant="outline">
-                  Позвонить
-                </Button>
-              </a>
-            </div>
+            <ButtonGroup className="mt-10 max-w-none">
+              <ButtonGroupItem>
+                <AddToCartButton productId={product.id} className="w-full" />
+              </ButtonGroupItem>
+              <ButtonGroupItem>
+                <Link to="/contacts" className="block w-full">
+                  <Button size="lg" variant="outline" className="w-full">
+                    Заказать расчёт
+                  </Button>
+                </Link>
+              </ButtonGroupItem>
+              <ButtonGroupItem>
+                <a href="tel:+74842700000" className="block w-full">
+                  <Button size="lg" variant="secondary" className="w-full">
+                    Позвонить
+                  </Button>
+                </a>
+              </ButtonGroupItem>
+            </ButtonGroup>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-cream/40 py-16">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+      <section className="border-t border-border bg-cream/40 py-14 md:py-16">
+        <div className="section-inner">
           <h2 className="text-2xl font-semibold text-ink-dark">
             Похожие модели
           </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

@@ -1,22 +1,29 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
 
 export function NotFoundPage() {
   return (
-    <section className="mx-auto flex min-h-[50vh] max-w-lg flex-col items-center justify-center px-4 py-20 text-center">
-      <p className="text-sm font-medium text-forest uppercase">404</p>
+    <section className="section-inner flex min-h-[50vh] max-w-lg flex-col items-center justify-center py-20 text-center">
+      <p className="text-sm font-semibold text-forest uppercase">404</p>
       <h1 className="mt-4 text-3xl font-bold text-ink-dark">Страница не найдена</h1>
       <p className="mt-4 text-muted-foreground">
         Возможно, ссылка устарела. Перейдите на главную или в каталог.
       </p>
-      <div className="mt-8 flex gap-3">
-        <Link to="/">
-          <Button>На главную</Button>
-        </Link>
-        <Link to="/catalog">
-          <Button variant="outline">Каталог</Button>
-        </Link>
-      </div>
+      <ButtonGroup className="mt-8 justify-center">
+        <ButtonGroupItem>
+          <Link to="/" className="block w-full sm:w-auto">
+            <Button className="w-full sm:w-auto">На главную</Button>
+          </Link>
+        </ButtonGroupItem>
+        <ButtonGroupItem>
+          <Link to="/catalog" className="block w-full sm:w-auto">
+            <Button variant="outline" className="w-full sm:w-auto">
+              Каталог
+            </Button>
+          </Link>
+        </ButtonGroupItem>
+      </ButtonGroup>
     </section>
   )
 }

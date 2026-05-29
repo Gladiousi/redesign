@@ -1,33 +1,17 @@
 import { Link } from "react-router-dom"
+import { ArrowRight } from "lucide-react"
 import { BentoCard } from "@/components/ui/BentoCard"
 import { SectionHeading } from "@/components/ui/SectionHeading"
-
-const articles = [
-  {
-    slug: "bezopasnost-detskoj",
-    title: "Как выбрать безопасный комплекс для ребёнка",
-    excerpt: "На что смотреть при покупке: материалы, крепления, высота и покрытие.",
-    date: "12 марта 2026",
-  },
-  {
-    slug: "uhod-za-derevom",
-    title: "Уход за деревянными снарядами",
-    excerpt: "Простые правила, чтобы комплекс служил годами — дома и на улице.",
-    date: "3 февраля 2026",
-  },
-  {
-    slug: "zanyatiya-doma",
-    title: "5 упражнений на шведской стенке дома",
-    excerpt: "Короткая программа на 15 минут для детей 4–8 лет.",
-    date: "18 января 2026",
-  },
-]
+import { TextLink } from "@/components/ui/TextLink"
+import { articles } from "@/data/articles"
 
 export function ArticlesPage() {
+  const [featured, ...rest] = articles
+
   return (
     <>
-      <section className="bg-cream px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
+      <section className="section-hero bg-cream">
+        <div className="section-inner">
           <SectionHeading
             eyebrow="Блог"
             title="Статьи и советы"
@@ -36,27 +20,66 @@ export function ArticlesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 md:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((a, i) => (
-            <BentoCard
-              key={a.slug}
-              className={i === 0 ? "md:col-span-2 lg:col-span-2" : ""}
-              as="article"
-            >
-              <time className="text-xs text-muted-foreground">{a.date}</time>
+      <section className="section-inner section-body">
+        <Link
+          to={`/articles/${featured.slug}`}
+          className="group block overflow-hidden rounded-3xl bg-cream transition-shadow hover:shadow-md"
+        >
+          <div className="grid md:grid-cols-2">
+            <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[280px]">
+              <img
+                src={featured.image}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-6 md:p-10 lg:p-12">
+              <time className="text-xs font-medium text-forest uppercase">
+                {featured.date} · {featured.readTime}
+              </time>
+              <h2 className="mt-3 text-2xl font-semibold text-ink-dark md:text-3xl group-hover:text-link">
+                {featured.title}
+              </h2>
+              <p className="mt-4 text-muted-foreground">{featured.excerpt}</p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-link">
+                Читать статью
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </div>
+          </div>
+        </Link>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:mt-10">
+          {rest.map((article) => (
+            <BentoCard key={article.slug} as="article" className="flex flex-col">
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={article.image}
+                  alt=""
+                  className="aspect-[16/10] w-full object-cover"
+                />
+              </div>
+              <time className="mt-5 text-xs text-muted-foreground">
+                {article.date}
+              </time>
               <h2 className="mt-2 text-xl font-semibold text-ink-dark">
-                <Link to="/articles" className="hover:text-forest">
-                  {a.title}
+                <Link
+                  to={`/articles/${article.slug}`}
+                  className="hover:text-link"
+                >
+                  {article.title}
                 </Link>
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground">{a.excerpt}</p>
-              <Link
-                to="/articles"
-                className="mt-4 inline-block text-sm font-medium text-forest hover:underline"
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {article.excerpt}
+              </p>
+              <TextLink
+                to={`/articles/${article.slug}`}
+                className="mt-5 inline-flex items-center gap-1 text-sm"
               >
-                Читать →
-              </Link>
+                Читать
+                <ArrowRight className="size-3.5" />
+              </TextLink>
             </BentoCard>
           ))}
         </div>
