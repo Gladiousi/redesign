@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --color-wood: #d4b896;
+  --color-wood-light: #e8d4bc;
+  --color-forest: #6b8e6f;
+  --color-forest-dark: #556f58;
+  --color-terracotta: #e5a77e;
+  --color-cream: #faf7f2;
+  --color-cream-dark: #f0ebe3;
+  --color-ink: #2c2c2c;
+  --color-ink-dark: #1f1f1f;
+
+  --color-primary: var(--color-forest);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--color-wood-light);
+  --color-secondary-foreground: var(--color-ink-dark);
+  --color-background: #ffffff;
+  --color-foreground: var(--color-ink);
+  --color-muted: var(--color-cream);
+  --color-muted-foreground: #5a5a5a;
+  --color-border: #e8e2d9;
+  --color-ring: var(--color-forest);
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink-dark tracking-tight;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .animate-fade-up-delay {
+    animation: fade-up 0.7s ease-out 0.15s both;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
