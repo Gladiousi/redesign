@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
+import { cn } from "@/lib/utils"
 
 type CtaSectionProps = {
   title?: string
   description?: string
+  className?: string
 }
 
 export function CtaSection({
   title = "Готовы подобрать комплекс для вашего ребёнка?",
-  description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Москве и области с доставкой по России.",
+  description = "Консультация, эскиз и расчёт. Реутов, Москва и область, доставка по России. WhatsApp, MAX, телефон или почта.",
+  className,
 }: CtaSectionProps) {
   return (
-    <section className="section-inner section-block">
-      <div className="relative overflow-hidden rounded-3xl bg-forest px-6 py-10 md:px-12 md:py-14">
+    <section className={cn("section-inner section-cta", className)}>
+      <div className="relative overflow-hidden rounded-3xl bg-forest px-5 py-7 sm:px-8 sm:py-8 md:px-10 md:py-9">
         <div
           className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-white/10 blur-3xl"
           aria-hidden
@@ -23,11 +26,13 @@ export function CtaSection({
           aria-hidden
         />
         <div className="relative max-w-xl">
-          <h2 className="text-2xl font-semibold text-white md:text-3xl">{title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-white/90 md:text-lg">
+          <h2 className="text-xl font-semibold text-white sm:text-2xl md:text-[1.65rem]">
+            {title}
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/90 sm:text-base">
             {description}
           </p>
-          <ButtonGroup className="max-w-none sm:max-w-md">
+          <ButtonGroup className="mt-6 max-w-none sm:max-w-md">
             <ButtonGroupItem>
               <Link to="/contacts" className="block w-full">
                 <Button variant="secondary" size="lg" className="w-full">

@@ -7,6 +7,9 @@ import { useCart } from "@/context/CartContext"
 import { cn } from "@/lib/utils"
 import { MobileMenu } from "./MobileMenu"
 
+const desktopNavLink =
+  "shrink-0 whitespace-nowrap rounded-full px-2.5 py-2 text-[13px] font-medium transition-colors"
+
 export function Header() {
   const [open, setOpen] = useState(false)
   const { count } = useCart()
@@ -19,13 +22,18 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-border/60 bg-white/95 backdrop-blur-md">
-        <div className="section-inner flex h-16 items-center justify-between gap-3 md:h-[4.5rem]">
+        <div
+          className={cn(
+            "section-inner flex h-16 items-center justify-between gap-3 md:h-18",
+            "min-[1440px]:grid min-[1440px]:grid-cols-[auto_minmax(0,1fr)_auto] min-[1440px]:items-center min-[1440px]:gap-4"
+          )}
+        >
           <Link
             to="/"
             className="flex shrink-0 flex-col leading-none"
             onClick={() => setOpen(false)}
           >
-            <span className="text-lg font-bold tracking-tight text-ink-dark md:text-xl">
+            <span className="text-lg font-bold tracking-tight text-ink-dark md:text-xl min-[1440px]:text-xl">
               Скрипалёвъ
             </span>
             <span className="mt-0.5 hidden text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:block">
@@ -33,41 +41,44 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Десктоп: от 1440px */}
           <nav
-            className="hidden items-center gap-0.5 min-[1440px]:flex"
+            className="hidden min-w-0 min-[1440px]:flex min-[1440px]:justify-center"
             aria-label="Основное меню"
           >
-            {mainNav.map((item) => (
-              <NavLink
-                key={item.href}
-                to={item.href}
-                className={({ isActive }) =>
-                  cn(
-                    "rounded-full px-2.5 py-2 text-[13px] font-medium transition-colors lg:px-3 lg:text-sm",
-                    isActive
-                      ? "bg-cream text-link"
-                      : "text-ink hover:bg-cream hover:text-link"
-                  )
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            <ul className="flex max-w-full flex-nowrap items-center justify-center gap-0.5">
+              {mainNav.map((item) => (
+                <li key={item.href} className="shrink-0">
+                  <NavLink
+                    to={item.href}
+                    className={({ isActive }) =>
+                      cn(
+                        desktopNavLink,
+                        isActive
+                          ? "bg-cream text-link"
+                          : "text-ink hover:bg-cream hover:text-link"
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
           </nav>
 
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 min-[1440px]:justify-self-end">
             <a
               href="tel:+79165348358"
-              className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-ink-dark transition-colors hover:bg-cream min-[1440px]:flex"
+              className="hidden size-10 items-center justify-center rounded-full text-ink-dark transition-colors hover:bg-cream min-[1440px]:flex"
+              title="+7 (916) 534-83-58"
+              aria-label="+7 (916) 534-83-58"
             >
               <Phone className="size-4 text-forest" />
-              <span className="hidden 2xl:inline">+7 (916) 534-83-58</span>
             </a>
 
             <Link
               to="/cart"
-              className="relative flex size-10 items-center justify-center rounded-full bg-cream text-ink-dark transition-colors hover:bg-cream-dark hover:text-link"
+              className="relative flex size-10 shrink-0 items-center justify-center rounded-full bg-cream text-ink-dark transition-colors hover:bg-cream-dark hover:text-link"
               aria-label={`Корзина${count > 0 ? `, ${count} товаров` : ""}`}
             >
               <ShoppingCart className="size-5" />
@@ -79,13 +90,17 @@ export function Header() {
             </Link>
 
             <Link to="/contacts" className="hidden min-[1440px]:block">
-              <Button size="lg">Заказать замер</Button>
+              <Button
+                size="lg"
+                className="h-12 rounded-full px-5 text-sm"
+              >
+                Заказать замер
+              </Button>
             </Link>
 
-            {/* Бургер: до 1440px (мобилка + планшет) */}
             <button
               type="button"
-              className="flex size-10 items-center justify-center rounded-full bg-cream text-ink-dark transition-colors hover:bg-cream-dark min-[1440px]:hidden"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-cream text-ink-dark transition-colors hover:bg-cream-dark min-[1440px]:hidden"
               onClick={() => setOpen(true)}
               aria-expanded={open}
               aria-label="Открыть меню"

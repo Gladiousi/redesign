@@ -27,10 +27,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   return (
     <div className="min-[1440px]:hidden">
-      {/* Затемнение: на планшете закрывает по клику; на мобилке под полноэкранной панелью */}
       <button
         type="button"
-        className="menu-backdrop fixed inset-0 z-[100] bg-ink-dark/45 backdrop-blur-[2px] max-md:hidden"
+        className="menu-backdrop fixed inset-0 z-100 bg-ink-dark/45 backdrop-blur-[2px] max-md:hidden"
         onClick={onClose}
         aria-label="Закрыть меню"
       />
@@ -40,10 +39,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         aria-modal="true"
         aria-label="Навигация"
         className={cn(
-          "menu-panel fixed z-[101] flex flex-col bg-cream",
-          /* < 768px — на весь экран */
+          "menu-panel fixed z-101 flex flex-col bg-cream",
           "inset-0 max-md:animate-menu-fade",
-          /* 768px–1439px — панель справа */
           "md:inset-y-0 md:right-0 md:left-auto md:w-full md:max-w-[min(100vw,22rem)] md:border-l md:border-border md:shadow-2xl md:animate-menu-slide"
         )}
       >

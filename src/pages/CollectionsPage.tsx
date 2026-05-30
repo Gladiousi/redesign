@@ -3,29 +3,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading"
 import { BentoCard } from "@/components/ui/BentoCard"
 import { Button } from "@/components/ui/button"
 import { CtaSection } from "@/components/sections/CtaSection"
+import { collections } from "@/data/siteContent"
 import { products } from "@/data/products"
 import { cn } from "@/lib/utils"
-
-const collections = [
-  {
-    id: "outdoor",
-    title: "Комплексы не только для дома!",
-    description:
-      "Погодостойкие конструкции для дачи и частного двора.",
-    image:
-      "cotage.jpg",
-    href: "/catalog?category=outdoor",
-  },
-  {
-    id: "home",
-    title: "Для квартир",
-    description:
-      "Компактные решения для детской и гостиной. Бесшумное крепление, бережное отношение к отделке.",
-    image:
-      "/home.jpg",
-    href: "/catalog?category=home",
-  },
-]
 
 export function CollectionsPage() {
   const [params] = useSearchParams()
@@ -37,14 +17,14 @@ export function CollectionsPage() {
         <div className="section-inner section-hero">
           <SectionHeading
             eyebrow="Коллекции"
-            title="Готовые решения"
-            description="Подборки по сценарию использования — от улицы до детской комнаты."
+            title="Готовые направления"
+            description="Как на основном сайте: для комнаты, дома и улицы — с индивидуальной доработкой проекта."
           />
         </div>
       </section>
 
-      <section className="section-inner section-block">
-        <div className="flex flex-col gap-8">
+      <section className="section-inner section-block section-block-last">
+        <div className="flex flex-col gap-6">
           {collections.map((col, i) => {
             const items = products.filter((p) => p.category === col.id)
             const isHighlight = highlight === col.id
@@ -59,31 +39,38 @@ export function CollectionsPage() {
               >
                 <div
                   className={cn(
-                    "relative min-h-[240px]",
-                    i === 1 && "md:order-2"
+                    "relative min-h-[220px] md:min-h-[260px]",
+                    i % 2 === 1 && "md:order-2"
                   )}
                 >
                   <img
                     src={col.image}
-                    alt={col.title}
+                    alt=""
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
                 <div
                   className={cn(
-                    "flex flex-col justify-center p-8 md:p-10",
-                    i === 1 && "md:order-1"
+                    "flex flex-col justify-center p-6 md:p-8",
+                    i % 2 === 1 && "md:order-1"
                   )}
                 >
-                  <h2 className="text-2xl font-semibold text-ink-dark md:text-3xl">
+                  <h2 className="text-xl font-semibold text-ink-dark md:text-2xl">
                     {col.title}
                   </h2>
-                  <p className="mt-4 text-muted-foreground">{col.description}</p>
-                  <p className="mt-4 text-sm text-ink">
-                    {items.length} модел{items.length === 1 ? "ь" : "и"} в подборке
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {col.description}
                   </p>
-                  <div className="mt-8">
-                    <Link to={col.href} className="block w-full sm:inline-block sm:w-auto">
+                  <p className="mt-4 text-sm font-medium text-ink">
+                    {items.length > 0
+                      ? `${items.length} модел${items.length === 1 ? "ь" : items.length < 5 ? "и" : "ей"} в каталоге`
+                      : "Индивидуальный проект под ваш запрос"}
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      to={col.href}
+                      className="block w-full sm:inline-block sm:w-auto"
+                    >
                       <Button className="w-full sm:w-auto">Смотреть модели</Button>
                     </Link>
                   </div>

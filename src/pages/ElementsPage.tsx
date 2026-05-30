@@ -23,7 +23,7 @@ export function ElementsPage() {
           />
         </div>
       </section>
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {elements.map((p) => (
             <ProductCard key={p.id} product={p} />

@@ -41,7 +41,7 @@ export function CatalogPage() {
         </div>
       </section>
 
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <div className="flex flex-wrap gap-2.5">
           {filters.map((f) => (
             <button
