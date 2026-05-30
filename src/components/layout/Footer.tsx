@@ -11,10 +11,10 @@ export function Footer() {
       <div className="section-inner grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-14 lg:grid-cols-4 lg:py-16">
         <div>
           <Link to="/" className="text-xl font-bold text-ink-dark">
-            Скрипалёвъ
+            Скрипалев
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            ИП Скрепалев Олег Владимирович — производство детских спортивных
+            ИП Скрепалев Олег Владимирович - производство детских спортивных
             комплексов из натуральной древесины с 2005 года.
           </p>
         </div>
@@ -60,12 +60,12 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-2">
               <MapPin className="mt-0.5 size-4 shrink-0 text-forest" />
-              <span>г. Калуга, ул. Примерная, 12</span>
+              <span>г. Реутов, ул. Молодежная, 1</span>
             </li>
             <li>
-              <a href="tel:+74842700000" className={`flex gap-2 ${footerLinkClass}`}>
+              <a href="tel:+79165348358" className={`flex gap-2 ${footerLinkClass}`}>
                 <Phone className="size-4 shrink-0 text-forest" />
-                +7 (4842) 70-00-00
+                +7 (916) 534-83-58
               </a>
             </li>
             <li>
@@ -74,7 +74,7 @@ export function Footer() {
                 className={`flex gap-2 ${footerLinkClass}`}
               >
                 <Mail className="size-4 shrink-0 text-forest" />
-                info@skripalev.ru
+                oleg-skripal@yandex.ru
               </a>
             </li>
           </ul>
@@ -84,7 +84,7 @@ export function Footer() {
       <div className="border-t border-border/80">
         <div className="section-inner flex flex-col gap-2 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} ИП Скрепалев О.В. Все права защищены.</p>
-          <p>Редизайн — дипломный проект. Прототип интерфейса.</p>
+          <p>Редизайн - дипломный проект Юрин2026. Прототип интерфейса.</p>
         </div>
       </div>
     </footer>

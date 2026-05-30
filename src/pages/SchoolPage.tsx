@@ -48,7 +48,7 @@ export function SchoolPage() {
         <BentoCard className="section-content" variant="forest">
           <p className="max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
             При покупке комплекса вы получаете памятку по безопасности и доступ к
-            базе упражнений. Очные занятия — по записи в Калуге.
+            базе упражнений.
           </p>
         </BentoCard>
       </section>

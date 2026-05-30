@@ -9,7 +9,7 @@ type CtaSectionProps = {
 
 export function CtaSection({
   title = "Готовы подобрать комплекс для вашего ребёнка?",
-  description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Калужской области и с доставкой по России.",
+  description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Москве и области с доставкой по России.",
 }: CtaSectionProps) {
   return (
     <section className="section-inner section-block">
@@ -36,7 +36,7 @@ export function CtaSection({
               </Link>
             </ButtonGroupItem>
             <ButtonGroupItem>
-              <a href="tel:+74842700000" className="block w-full">
+              <a href="tel:+79165348358" className="block w-full">
                 <Button
                   variant="outline"
                   size="lg"

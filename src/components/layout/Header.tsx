@@ -21,7 +21,7 @@ export function Header() {
         <div className="section-inner flex h-16 items-center justify-between gap-3 md:h-[4.5rem]">
           <Link to="/" className="flex shrink-0 flex-col leading-none" onClick={() => setOpen(false)}>
             <span className="text-lg font-bold tracking-tight text-ink-dark md:text-xl">
-              Скрипалёвъ
+              Скрипалев
             </span>
             <span className="mt-0.5 hidden text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:block">
               детские комплексы из дерева
@@ -52,11 +52,11 @@ export function Header() {
 
           <div className="flex items-center gap-1.5 sm:gap-2">
             <a
-              href="tel:+74842700000"
+              href="tel:+79165348358"
               className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-ink-dark transition-colors hover:bg-cream lg:flex"
             >
               <Phone className="size-4 text-forest" />
-              <span className="hidden 2xl:inline">+7 (4842) 70-00-00</span>
+              <span className="hidden 2xl:inline">+7(916) 534-83-58</span>
             </a>
 
             <Link
@@ -102,7 +102,7 @@ export function Header() {
               className="text-lg font-bold text-ink-dark"
               onClick={() => setOpen(false)}
             >
-              Скрипалёвъ
+              Скрипалёв
             </Link>
             <button
               type="button"
@@ -156,11 +156,11 @@ export function Header() {
 
           <div className="shrink-0 space-y-3 border-t border-border/80 bg-white/50 px-5 py-6">
             <a
-              href="tel:+74842700000"
+              href="tel:+79165348358"
               className="flex items-center justify-center gap-2 py-2 text-base font-semibold text-link"
             >
               <Phone className="size-5" />
-              +7 (4842) 70-00-00
+              +7 (916) 534-83-58
             </a>
             <Link to="/contacts" className="block w-full" onClick={() => setOpen(false)}>
               <Button size="lg" className="w-full">

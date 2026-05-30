@@ -15,7 +15,7 @@ export function ArticlesPage() {
           <SectionHeading
             eyebrow="Блог"
             title="Статьи и советы"
-            description="Полезные материалы для родителей — без перегруза, по делу."
+            description="Полезные материалы для родителей - без перегруза, по делу."
           />
         </div>
       </section>

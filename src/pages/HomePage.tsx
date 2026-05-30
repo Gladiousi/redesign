@@ -20,7 +20,7 @@ const advantages = [
   {
     icon: TreeDeciduous,
     title: "Массив дерева",
-    text: "Сосна и лиственница 1 сорта, без ДСП и пластика в несущих элементах.",
+    text: "Сосна 1 сорта, без ДСП и пластика в несущих элементах.",
   },
   {
     icon: Shield,
@@ -59,7 +59,7 @@ export function HomePage() {
           <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-12 lg:gap-14">
             <div className="animate-fade-up md:col-span-5">
               <p className="text-sm font-medium tracking-wide text-forest uppercase">
-                ИП Скрепалев · Калуга
+                ИП Скрепалев · Реутов
               </p>
               <h1 className="mt-4 text-4xl font-bold leading-[1.1] text-ink-dark md:text-5xl lg:text-[3.25rem]">
                 Детские спортивные комплексы из{" "}
@@ -90,16 +90,16 @@ export function HomePage() {
             <div className="animate-fade-up-delay md:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[16/11]">
                 <img
-                  src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1400&q=85"
+                  src="/individual.jpg"
                   alt="Детский спортивный комплекс из дерева"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute right-4 bottom-4 left-4 rounded-2xl bg-white/95 p-4 backdrop-blur-sm md:right-auto md:bottom-6 md:left-6 md:max-w-xs md:p-5">
                   <p className="text-sm font-semibold text-ink-dark">
-                    Комплекс «Скрипалёвъ»
+                    Комплекс «Скрипалев»
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Флагманская модель · от 89 000 ₽
+                    Индивидуальный спортивный уголок под заказ · от 137 000 ₽
                   </p>
                 </div>
               </div>

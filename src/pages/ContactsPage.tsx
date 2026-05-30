@@ -19,7 +19,7 @@ export function ContactsPage() {
           <SectionHeading
             eyebrow="Контакты"
             title="Свяжитесь с нами"
-            description="Оставьте заявку на замер или позвоните — ответим в рабочее время."
+            description="Оставьте заявку на замер или позвоните - ответим в рабочее время."
           />
         </div>
       </section>
@@ -34,31 +34,31 @@ export function ContactsPage() {
                 href="tel:+74842700000"
                 className="mt-1 block font-semibold text-link hover:text-link-hover hover:underline"
               >
-                +7 (4842) 70-00-00
+                +7 (916) 534-83-58
               </a>
             </BentoCard>
             <BentoCard>
               <Mail className="size-5 text-forest" />
               <p className="mt-3 font-medium text-ink-dark">Email</p>
               <a
-                href="mailto:info@skripalev.ru"
+                href="mailto:oleg-skripaĺ@yandex.ru"
                 className="mt-1 block font-semibold text-link hover:text-link-hover hover:underline"
               >
-                info@skripalev.ru
+                oleg-skripal@yandex.ru
               </a>
             </BentoCard>
             <BentoCard>
               <MapPin className="size-5 text-forest" />
               <p className="mt-3 font-medium text-ink-dark">Адрес</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                г. Калуга, ул. Примерная, 12
+                г. Реутов, ул. Молодежная, 1
               </p>
             </BentoCard>
             <BentoCard variant="accent">
               <Clock className="size-5 text-forest" />
               <p className="mt-3 font-medium text-ink-dark">Режим работы</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Пн–Пт: 9:00–18:00
+                Пн–Пт: 9:00–19:00
                 <br />
                 Сб: по записи
               </p>
