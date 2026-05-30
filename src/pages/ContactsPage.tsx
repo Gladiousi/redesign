@@ -21,7 +21,7 @@ export function ContactsPage() {
           <SectionHeading
             eyebrow="Контакты"
             title="Свяжитесь с нами"
-            description="Оставьте заявку в форме или напишите удобным способом — ответим в рабочее время."
+            description="Оставьте заявку в форме или напишите удобным способом - ответим в рабочее время."
           />
         </div>
       </section>
@@ -100,7 +100,7 @@ export function ContactsPage() {
             <BentoCard variant="accent" className="flex gap-3">
               <Clock className="size-5 shrink-0 text-forest" />
               <p className="text-sm leading-relaxed text-muted-foreground">
-                <span className="font-medium text-ink-dark">WhatsApp и MAX</span> —
+                <span className="font-medium text-ink-dark">WhatsApp и MAX</span> -
                 укажите в форме или напишите напрямую, как вам удобнее.
               </p>
             </BentoCard>

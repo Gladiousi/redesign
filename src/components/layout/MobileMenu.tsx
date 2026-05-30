@@ -50,7 +50,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             className="text-lg font-bold text-ink-dark"
             onClick={onClose}
           >
-            Скрипалёвъ
+            Скрипалев
           </Link>
           <button
             type="button"

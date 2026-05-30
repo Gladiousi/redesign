@@ -6,7 +6,7 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps"
 import { historyTeaser, movementTypes } from "@/data/siteContent"
 
 const materialsNoteText =
-  "Основной материал — сосна камерной сушки: строганая, шлифованная, с бесцветной пропиткой под помещение или улицу. Ступени деревянных и верёвочных лестниц — из берёзы (28–30 мм) для жёсткости."
+  "Основной материал - сосна: строганая, шлифованная, с бесцветной пропиткой под помещение или улицу. Ступени деревянных и верёвочных лестниц - (28-30 мм) для жёсткости."
 
 export function AboutPage() {
   return (
@@ -16,7 +16,7 @@ export function AboutPage() {
           <SectionHeading
             eyebrow="О компании"
             title="Семейное производство с душой"
-            description="ИП Скрепалев Олег Владимирович — мастерская детских спортивных комплексов из натуральной древесины в Реутове."
+            description="ИП Скрепалев Олег Владимирович - мастерская детских спортивных комплексов из натуральной древесины в Реутове."
           />
         </div>
       </section>
@@ -34,7 +34,7 @@ export function AboutPage() {
             <BentoCard>
               <h3 className="text-xl font-semibold text-ink-dark">Наша миссия</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Создаём безопасное пространство для развития детей — без пластика
+                Создаём безопасное пространство для развития детей - без пластика
                 в несущих конструкциях, с уважением к природе и семье. Каждый
                 комплекс проходит контроль качества перед отгрузкой.
               </p>
@@ -88,7 +88,7 @@ export function AboutPage() {
             ))}
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
-            Подробнее о занятиях — в разделе{" "}
+            Подробнее о занятиях - в разделе{" "}
             <TextLink to="/school">Школа «Крепыш»</TextLink>.
           </p>
         </div>

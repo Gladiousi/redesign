@@ -86,7 +86,7 @@ export function HomePage() {
         <SectionHeading
           eyebrow="Преимущества"
           title="Почему выбирают Скрипалевых"
-          description="Сочетаем ремесло, безопасность и методику — без пустых обещаний."
+          description="Сочетаем ремесло, безопасность и методику - без пустых обещаний."
         />
         <div className="card-grid section-content">
           {advantages.map((item, i) => (
@@ -122,7 +122,7 @@ export function HomePage() {
           <SectionHeading
             eyebrow="Как заказать"
             title="От заявки до установки"
-            description="Прозрачные этапы — вы понимаете, что происходит на каждом шаге."
+            description="Прозрачные этапы - вы понимаете, что происходит на каждом шаге."
           />
           <div className="section-content">
             <ProcessSteps />
@@ -135,7 +135,7 @@ export function HomePage() {
           <SectionHeading
             eyebrow="Каталог"
             title="Популярные комплексы"
-            description="Цены «от» актуальны на сайте; точная сумма — после согласования конфигурации."
+            description="Цены «от» актуальны на сайте; точная сумма - после согласования конфигурации."
             className="mb-0"
           />
           <Link to="/catalog" className="w-full shrink-0 sm:w-auto">

@@ -34,7 +34,7 @@ export function Header() {
             onClick={() => setOpen(false)}
           >
             <span className="text-lg font-bold tracking-tight text-ink-dark md:text-xl min-[1440px]:text-xl">
-              Скрипалёвъ
+              Скрипалев
             </span>
             <span className="mt-0.5 hidden text-[10px] font-medium tracking-widest text-muted-foreground uppercase sm:block">
               детские комплексы из дерева
