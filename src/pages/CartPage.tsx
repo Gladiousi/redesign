@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/ButtonGroup"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { TextLink } from "@/components/ui/TextLink"
+import { OrderNotice } from "@/components/sections/OrderNotice"
 import { useCart } from "@/context/CartContext"
 import { formatPrice } from "@/data/products"
 
@@ -27,6 +28,7 @@ export function CartPage() {
       </section>
 
       <section className="section-inner section-block">
+        <OrderNotice className="mb-8" compact />
         {lines.length === 0 ? (
           <div className="flex flex-col items-center rounded-3xl bg-cream px-6 py-16 text-center">
             <ShoppingBag className="size-12 text-forest" strokeWidth={1.5} />

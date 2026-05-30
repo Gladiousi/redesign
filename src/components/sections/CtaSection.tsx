@@ -9,7 +9,7 @@ type CtaSectionProps = {
 
 export function CtaSection({
   title = "Готовы подобрать комплекс для вашего ребёнка?",
-  description = "Бесплатная консультация, замер и расчёт стоимости. Работаем по Москве и области с доставкой по России.",
+  description = "Консультация, эскиз и расчёт. Реутов, Москва и область, доставка по России. WhatsApp, MAX, телефон или почта.",
 }: CtaSectionProps) {
   return (
     <section className="section-inner section-block">
