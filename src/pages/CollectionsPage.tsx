@@ -23,7 +23,7 @@ export function CollectionsPage() {
         </div>
       </section>
 
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <div className="flex flex-col gap-6">
           {collections.map((col, i) => {
             const items = products.filter((p) => p.category === col.id)

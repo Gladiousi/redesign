@@ -35,7 +35,7 @@ export function SchoolPage() {
         </div>
       </section>
 
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <BentoCard variant="forest" className="mb-8">
           <p className="max-w-3xl text-sm leading-relaxed text-white/90 md:text-base">
             {methodologyTeaser}

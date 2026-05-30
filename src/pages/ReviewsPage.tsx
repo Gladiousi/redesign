@@ -16,7 +16,7 @@ export function ReviewsPage() {
         </div>
       </section>
 
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <div className="grid gap-5 sm:grid-cols-2">
           {reviews.map((review) => (
             <BentoCard key={review.id}>

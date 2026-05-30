@@ -26,7 +26,7 @@ export function ArticlesPage() {
           className="group block overflow-hidden rounded-3xl bg-cream transition-shadow hover:shadow-md"
         >
           <div className="grid md:grid-cols-2">
-            <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[280px]">
+            <div className="relative aspect-16/10 overflow-hidden md:aspect-auto md:min-h-[280px]">
               <img
                 src={featured.image}
                 alt=""
@@ -56,7 +56,7 @@ export function ArticlesPage() {
                 <img
                   src={article.image}
                   alt=""
-                  className="aspect-[16/10] w-full object-cover"
+                  className="aspect-16/10 w-full object-cover"
                 />
               </div>
               <time className="mt-5 text-xs text-muted-foreground">

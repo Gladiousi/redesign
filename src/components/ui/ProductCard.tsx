@@ -27,7 +27,7 @@ export function ProductCard({
       <div
         className={cn(
           "relative overflow-hidden",
-          variant === "featured" ? "aspect-[4/3] md:flex-1 md:min-h-0" : "aspect-[5/4]"
+          variant === "featured" ? "aspect-4/3 md:flex-1 md:min-h-0" : "aspect-5/4"
         )}
       >
         <img
@@ -36,7 +36,7 @@ export function ProductCard({
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-dark/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-linear-to-t from-ink-dark/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <div className="flex items-start justify-between gap-3">

@@ -4,11 +4,9 @@ import type { ReactNode } from "react"
 type ButtonGroupProps = {
   children: ReactNode
   className?: string
-  /** Отступ сверху от текста (по умолчанию mt-8) */
   spacing?: "default" | "none"
 }
 
-/** Группа кнопок: на мобилке — колонка на всю ширину, с sm — в ряд */
 export function ButtonGroup({
   children,
   className,
@@ -35,7 +33,7 @@ export function ButtonGroupItem({
   className?: string
 }) {
   return (
-    <div className={cn("w-full sm:w-auto [&_[data-slot=button]]:w-full", className)}>
+    <div className={cn("w-full sm:w-auto **:data-[slot=button]:w-full", className)}>
       {children}
     </div>
   )

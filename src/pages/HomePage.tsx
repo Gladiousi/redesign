@@ -59,7 +59,7 @@ export function HomePage() {
                 <img
                   src="/individual.jpg"
                   alt="Индивидуальный детский спортивный комплекс"
-                  className="aspect-[4/3] w-full object-cover lg:aspect-[16/11]"
+                  className="aspect-4/3 w-full object-cover lg:aspect-16/11"
                 />
                 <div className="absolute right-4 bottom-4 left-4 rounded-2xl bg-white/95 p-4 backdrop-blur-sm md:left-6 md:max-w-xs">
                   <p className="text-sm font-semibold text-ink-dark">
@@ -158,7 +158,7 @@ export function HomePage() {
               <img
                 src="/Oleg.jpg"
                 alt="Олег Скрипалев"
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-4/3 w-full object-cover"
               />
             </div>
             <div>
@@ -185,7 +185,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-inner section-block">
+      <section className="section-inner section-block section-block-last">
         <SectionHeading
           eyebrow="Отзывы"
           title="Семьи, которые уже занимаются"

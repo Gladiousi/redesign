@@ -34,7 +34,7 @@ export function ProductPage() {
               <img
                 src={product.image}
                 alt={product.name}
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-4/3 w-full object-cover"
               />
             </div>
             {product.gallery && product.gallery.length > 1 && (
@@ -105,7 +105,7 @@ export function ProductPage() {
       </section>
 
       <section className="border-t border-border bg-cream/40">
-        <div className="section-inner section-block">
+        <div className="section-inner section-block section-block-last">
           <h2 className="text-2xl font-semibold text-ink-dark">
             Похожие модели
           </h2>

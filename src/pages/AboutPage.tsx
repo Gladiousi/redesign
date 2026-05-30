@@ -27,7 +27,7 @@ export function AboutPage() {
             <img
               src="/about.jpg"
               alt="Мастерская Скрипалевых"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-4/3 w-full object-cover"
             />
           </BentoCard>
           <div className="space-y-6">
@@ -94,7 +94,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-inner section-block-tight">
+      <section className="section-inner section-block-tight section-block-last">
         <SectionHeading
           eyebrow="Процесс"
           title="Как мы работаем с заказчиком"

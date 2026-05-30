@@ -30,7 +30,6 @@ export function ContactsPage() {
         <OrderNotice className="mb-8" compact />
 
         <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
-          {/* Компактная колонка контактов */}
           <div className="space-y-5 lg:col-span-4">
             <BentoCard className="space-y-5">
               <div>
@@ -107,8 +106,7 @@ export function ContactsPage() {
             </BentoCard>
           </div>
 
-          {/* Форма — основной акцент */}
-          <BentoCard className="lg:col-span-8 lg:min-h-[32rem]">
+          <BentoCard className="lg:col-span-8 lg:min-h-128">
             {sent ? (
               <div className="flex min-h-[280px] flex-col items-center justify-center px-4 py-12 text-center">
                 <div className="flex size-14 items-center justify-center rounded-full bg-cream">
